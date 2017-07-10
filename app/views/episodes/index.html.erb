@@ -1,7 +1,9 @@
 <h1>All Episodes</h1>
 
+<%= form_tag("/episodes", method: "post") do %>
 <ul>
   <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
+    <a href=<%= "/episodes/#{episode.id}" %>><li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li></a><br>
   <% end %>
 </ul>
+<% end %>

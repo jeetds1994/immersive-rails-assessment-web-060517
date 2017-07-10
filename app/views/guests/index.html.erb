@@ -1,7 +1,9 @@
 <h1>All The Guests</h1>
 
+<%= form_tag("/guests", method: "post") do %>
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <a href=<%= "/guests/#{guest.id}" %>><%= guest.name %></a><br>
   <% end %>
 </ul>
+<% end %>
